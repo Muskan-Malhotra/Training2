@@ -1,0 +1,282 @@
+--select * from EmployeeData
+/*--select * from CompanyData.EmployeeData when multiple databases and tables
+select E_Name from EmployeeData*/
+--insert into EmployeeData(E_Name,E_Phn,E_Address,E_PAN) values("Samantha",9854102368,"36-D,Canada","OKJH985O")
+
+--UPDATE EmployeeData set E_Name="John Thomas" where E_Name = "John"
+--delete from EmployeeData where e_name="John Thomas"
+
+select e_name,e_id,salary from EmployeeData where salary>20000 and salary<50000 order by salary,e_name
+
+???????????????????mongo db ??????????????????
+mylist = [
+  { "_id": 1,"id":"1015", "name": "Ammy", "profession": "Sr. Software Developer"},
+  { "_id": 2,"id":"1016", "name": "Michel", "profession": "Sr. QA Engineer"},
+  { "_id": 3,"id":"1017", "name": "William", "profession": "Sr. Data Analyst"},
+  ]
+x = mycol.insert_many(mylist)
+
+#print list of the _id values of the inserted documents:
+print('Inserted Ids:',x.inserted_ids)
+print('Inserted data:',x)
+
+
+from pymongo import MongoClient
+  
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+  
+# database name: mydatabase
+db = conn.mydatabase
+  
+# Created or Switched to collection names: myTable
+collection = db.myTable
+  
+# To find() all the entries inside collection name 'myTable'
+cursor = collection.find()
+for record in cursor:
+    print(record)
+
+from pymongo import MongoClient
+  
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+  
+# database name: hcltestdb
+db = conn.hcltestdb
+  
+# Created or Switched to collection names: employees
+collection = db.employees
+  
+# To find() all the entries inside collection name 'employees'
+cursor = collection.find()
+for record in cursor:
+    print(record)
+
+
+    
+from pymongo import MongoClient
+# Creating instance of mongoclient  
+client = MongoClient()
+db = client.hcltestdb 
+employees = db.employees
+myquery = {​​ "name": {​​ "$gt": "P" }​​ }​​
+for x in db.employees.find(myquery):
+  print('Result:',x)
+
+[2:35 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    from pymongo import MongoClient
+# Creating instance of mongoclient  
+client = MongoClient()
+db = client.hcltestdb 
+employees = db.employees
+myquery = {​​ "name": {​​ "$regex": "^J" }​​ }​​
+for x in db.employees.find(myquery):
+  print('Result:',x)
+
+
+[2:36 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    # import mongo client to connect
+from pymongo import MongoClient
+# Creating instance of mongoclient  
+client = MongoClient()
+# Creating database  
+db = client.hcltestdb 
+employee1 = {​​"id": "1011",  "name": "Peter",  "profession": "QA Lead"}​​
+employee2 = {​​"id": "1012",  "name": "Mark",  "profession": "Software Developer"}​​
+# Creating document  
+employees = db.employees
+# Inserting data
+employees.insert_one(employee1)
+employees.insert_one(employee2)
+# Fetching one data
+data=employees.find_one()
+print('Fetched data:',data)
+print('-'*20)
+#Fetching many data
+for i in db.employees.find({​​"profession": "Software Developer"}​​):
+    print('Fetched data:',i)
+print('-'*20)
+#count number of documents with the given name
+print('Count:',db.employees.count({​​"profession": "Software Developer"}​​))
+print('Count:',db.employees.find({​​"profession": "Software Developer"}​​).count())
+
+from pymongo import MongoClient
+# Creating instance of mongoclient  
+client = MongoClient()
+db = client.hcltestdb 
+employees = db.employees
+
+for x in db.employees.find().sort("name"):
+    print('Result:',x)
+
+[2:37 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    from pymongo import MongoClient
+# Creating instance of mongoclient  
+client = MongoClient()
+db = client.hcltestdb 
+employees = db.employees
+for x in db.employees.find().sort("name“, -1):
+    print('Result:',x)
+
+[2:39 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    from pymongo import MongoClient
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+# existing database
+db = conn.hcltestdb
+# fetch existing collection names: employees
+collection = db.employees
+# update name 
+myquery={​​ "id": "1010" }​​
+newvalue={​​ "$set": {​​ "name": “John Thomas" }​​ }​​
+result = collection.update_one(myquery, newvalue)
+print("Updated data",result)
+# Print the new record
+cursor = collection.find()
+for record in cursor:
+    print(record)
+
+[2:40 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    from pymongo import MongoClient
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+# existing database
+db = conn.hcltestdb
+# fetch existing collection names: employees
+collection = db.employees
+# update all the employee data whose profession=software developer
+result = collection.update_many(
+        {​​"profession": "Software Developer"}​​,
+        {​​
+                "$set":{​​ "profession": "Sr. Software Developer"}​​,
+                "$currentDate":{​​"lastModified":True}​​                 
+         }​​
+        )
+print("Updated data",result)
+# Print the new record
+cursor = collection.find()
+for record in cursor:
+    print(record)
+
+[2:41 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    import pymongo
+myclient = pymongo.MongoClient('mongodb://localhost:27017/')
+print(myclient.list_database_names())
+
+import pymongo
+myclient = pymongo.MongoClient('mongodb://localhost:27017/')
+
+dblist = myclient.list_database_names()
+if "hcltestdb" in dblist:
+  print("The database exists.")
+
+[2:43 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    import pymongo
+myclient = pymongo.MongoClient()
+mydb = myclient["hcltestdb"]
+#list of all collections in database
+print(mydb.list_collection_names())
+
+[2:43 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    import pymongo
+myclient = pymongo.MongoClient()
+mydb = myclient["hcltestdb"]
+collist = mydb.list_collection_names()
+if "employees" in collist:
+  print("The collection exists.")
+
+[2:44 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    #update one data
+from pymongo import MongoClient
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+# existing database
+db = conn.hcltestdb
+collection = db.employees
+#print the result:
+for x in collection.find().limit(2):
+  print(x)
+
+[2:45 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    from pymongo import MongoClient
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+# existing database
+db = conn.hcltestdb
+collection = db.customers
+collection.drop()
+if collection.drop():
+    print('Drop successfully')
+else:
+    print('Collection does not exist')
+
+from pymongo import MongoClient
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+
+# existing database
+db = conn.hcltestdb
+collection = db.employees
+
+myquery = { "name": "Ammy" }
+
+collection.delete_one(myquery)
+
+# Print the record
+cursor = collection.find()
+for record in cursor:
+    print(record)
+
+[2:47 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    from pymongo import MongoClient
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+# existing database
+db = conn.hcltestdb
+collection = db.employees
+myquery = {​​ "name": {​​"$regex": "^Ma"}​​ }​​
+result = collection.delete_many (myquery)
+print(result.deleted_count)
+# Print the record
+cursor = collection.find()
+for record in cursor:
+    print(record)
+
+[2:48 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    from pymongo import MongoClient
+try:
+    conn = MongoClient()
+    print("Connected successfully!!!")
+except:  
+    print("Could not connect to MongoDB")
+# existing database
+db = conn.hcltestdb
+collection = db.employees
+x = collection.delete_many({​​}​​)
+print(x.deleted_count, " documents deleted.")
+

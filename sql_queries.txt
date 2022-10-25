@@ -1,0 +1,53 @@
+insert into attendance(a_id,user_id,date,in_time,out_time,a_type) 
+values(1001,115,"20-10-2022","08:00",'18:00','regular')
+
+[9:51 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+select * from Companydata.employeedata
+​[10:00 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+Insert INTO Companydata.employeedata() VALUES (14,'Siji')
+​[10:13 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+update Companydata.employeedata Set name='John Thomas' where name='john'
+​[10:15 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+DELETE FROM Companydata.employeedata where name='John Thomas'
+​[10:59 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    create db.attendance(A_ID INT Primary Key,Date DATE
+user_id INT,
+IN time TIME, out time TIME,A_type CHAR(10)
+FOREIGN KEY user_id REFERENCES Employeedata(userid)
+)
+​[11:07 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    update employeedata set salary=salary+10000 where sal<10000
+​[11:08 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    select e_id,e_name,salary from employeedata where sal>10000 order by e_id, salary
+​[11:40 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    Alter Table Employeedata Add dummy INT
+alter table Employeedata drop column dummy
+
+// create database
+[11:42 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    CREATEDATABASE database_name;  
+[11:47 AM] Saurika  Tiwary(Vatika82-N) (Guest)
+    TRUNCATETABLE table_name; 
+
+commit and roll back if any id is the foreign key id
+
+[12:15 PM] Vikas Rawat (Guest)
+    Select name from employ where salary between 1000 and 2000
+​[12:33 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+SELECT id,name,salary FROM Companydata.employeedata WHERE salary > (SELECT salary FROM Companydata.employeedataWHERE city = 'Indore' )
+​[12:38 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+select * from Companydata.employeedata where id in (12,13)
+[2:16 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+select id,name,city FROM Companydata.employeedata WHERE city Like 'Mu%'
+[4:29 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+ALTER TABLE employeedata RENAME TO employees;
+
+

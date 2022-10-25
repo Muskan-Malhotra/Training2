@@ -1,0 +1,90 @@
+CREATE TABLE DEPARTMENT (
+         DEPARTMENT_ID  INT primary key,
+         DEPARTMENT_NAME  VARCHAR(30),
+         DEPTLOCATION VARCHAR(20),
+         DEPTFLOOR VARCHAR(20)
+         );
+
+
+CREATE TABLE EMPLOYEE (
+         EMPLOYEE_ID  INT primary key,
+         EMPLOYEE_NAME  VARCHAR(25),
+         MANAGER_ID INT,
+         DATE_OF_HIRE DATE,
+         JOBNAME VARCHAR(15),
+         SALARY DECIMAL(10,2),
+         DOB  DATE,
+         ADDRESS VARCHAR(30),
+         DEPARTMENT_ID INT REFERENCES DEPARTMENT(DEPARTMENT_ID)
+         );
+         
+
+         
+CREATE TABLE SALARY (
+         SALARY_LVL  INT primary key,
+         SALARYMIN INT,
+         SALARYMAX INT
+         );
+
+
+insert into employee(employee_id,employee_name,manager_id,date_of_hire,jobname,salary,DOB,address,department_id) 
+values
+(1,"Rimi",101,"03-02-2022","Developer",30000.0,"20-01-1998","C-52,Canada",300),
+(2,"Aman",102,"04-02-2022","Developer",32000.0,"22-02-1998","A-123,LA",301),
+(3,"Sidhi",103,"05-02-2022","HR",30500.0,"19-15-2000","A2,Canada",302),
+(4,"Ankita",104,"06-02-2022","Sr.Developer",37000.0,"22-06-2000","R42,Canada",303),
+(5,"Ridhi",105,"07-02-2022","Developer",40000.0,"27-06-2001","Q2,America",304),
+(6,"Rashmi",106,"08-02-2022","HR",20000.0,"14-03-1998","C-52,Canada",300),
+(7,"Bani",107,"09-02-2022","Sr.Developer",50000.0,"07-10-1998","D-123,Vegas",301),
+(8,"Sima",108,"10-02-2022","Developer",30000.0,"19-06-1998","C-3D,Vegas",302),
+(9,"Daksh",109,"11-02-2022","Sr.Developer",55000.0,"03-01-2000","W-52,Canada",303),
+(10,"Drishti",110,"13-02-2022","Developer",31000.0,"25-08-2000","K-52,Canada",304);
+
+
+insert into department(department_id,department_name,deptlocation,deptfloor)
+values
+(300,"IT","Gurugram","1st Floor"),
+(301,"HR","Gurugram","2nd Floor"),
+(302,"IT","Pune","3rd Floor"),
+(303,"IT","Gurugram","2nd Floor"),
+(304,"HR","Pune","1st Floor");
+
+insert into salary(salary_lvl,salarymin,salarymax)
+values
+(1,15000,35000),
+(2,15000,35000),
+(3,25000,45000),
+(4,35000,55000),
+(5,35000,50000);
+
+select * from employee
+
+select employee_name from employee
+
+select employee_name,jobname from employee
+
+select distinct(jobname) from employee
+
+--select employee_name,jobname,salary from employee salary=salary+(salary*(12/100))
+
+update employee set salary=salary+(salary*0.12)
+
+select employee_name,jobname,salary from employee
+
+select employee_name from 
+
+SELECT employee_name
+FROM employee
+WHERE salary in ( 
+  select min(salary) sal from employee 
+    union 
+  select max(salary) from employee);
+  
+
+--for per annum
+update employee set salary = salary*12
+select employee_name,salary from employee
+
+
+
+select employee_id,employee_name,jobname from employee where salary>90000

@@ -1,0 +1,28 @@
+ECMA Script
+The other version of the javascript
+ECMAScript 6 or ES6
+2015
+Can use let and var variable
+Var,Let,Const: 
+var: thorughout function we have scope
+let: block scope
+const: throught same; eg:pi=3.14
+classes:
+keyword class: create the class
+always ass a method named constructor();
+class car{
+
+constructor(name,year){
+this.name=name;
+this.year=year;
+}}
+
+Strings: collectionof characters
+methods:
+1)string.includes(): return true if a string contains a specified value
+2)string.startsWith(): return true if the string starts with a specified value.false;
+3)string.endsWith(): return true if the string ends with a specified value.false;
+
+Object entries():
+1)Create an array iterator
+2)iterate over the key/value pairs

@@ -1,0 +1,163 @@
+canva:
+Introduced in html 5
+HTML canvas eleemnt is used to draw graphics on web page
+used for graphical designing
+<canva>
+
+## it uses some scripts 
+# on the fly we can use it--> it makes the changes on the cliet side. After rendering!
+
+It is an element. Like a container. _ basically Javascript
+to draw graphics
+
+
+SVG:
+Scaler Vector Graphics
+This was instroduced in 2001 Sptember By W3C-Consortium
+To draw the images
+We can draw using XML format on the browser
+we can draw animation
+
+
+Advantage over cnavas is it creates a good quality
+No pixels
+No breakage
+XML based fully
+Every element is available within the SVG DOM
+Can attach the js event handler for an element
+Each shape is an object
+
+## WEB Storage:
+store some of the details of web page in the browser memory itself
+also known as dom  storage
+supports persistent data storage in the web browser
+storage size may vary browser to browser
+
+Types of storage:
+local storage:
+Always present in the webpage even if the page is closed
+not loseable
+
+session storage:
+loseable
+for a particular session the data is stored
+no persistency
+
+
+Application Cache:
+using the internet.
+cache accessible without internet connection
+A web application is cached and accessed without an internet connection
+We can make use of a web application that will run without the internet connection by just creating a manifest file in our application.
+Manifest file: a meta data file: containing the meta data
+
+the content is the meta data: it descibes the data about the data.
+It descibes the explanation. It gives a brief desciption. 
+
+
+CSS:
+cascading style sheets
+Used to define styles for the web pages:
+!) Design
+@) Layout
+#)Variations
+$)Animation
+
+What is css?
+Used to format the layout of a web page
+Add to html document in 3 ways:
+1) inline
+<h1 style="color:blue;">This is heading</h1>
+2) internal - used in head and call it in the body through declaration in the head tag.
+create everything in the head section
+
+3)external
+
+common way is the internal way.
+
+CSS Selctors:
+patterns used to select elemnts you want to give style
+.class->.div->all the elements with class="doctor"
+#id-> select the elements with id="name"
+*->select all the element
+elemetn-> <p>-> select all the <p> elements
+5) :hover->:hover->selects links on mouse over
+6):root->:root->select the documents root element 
+
+
+###2D 
+Two Dimensional Transform and 2D and 3D!
+Understanding 2D tranformation(change in position and dimension)
+3D  tranform properties
+Transition
+Animation
+
+Transformation:
+Transformation makes the object to change its size and position.
+
+Transformation
+css3-came with this ideas
+css3 with awesome interaction
+allows us to rotate, scale,skew
+Both in 2D and 3D
+css3 supports both
+
+Need transform attribute
+2D and 3D tranfromation methods
+1) Translate(x,y): moving an element to the specified x and y axis
+2) TranslateX(n) - according to the specified X axis
+3) Translate Y(n) - movement to a specified Y axis
+4)Rotate(angle) - turn an element clockwise/anti-clockwise(0 to 360 degree) angle
+5)Scale(w,h) - used to adjust an eleement size by changing width and height.
+6) ScaleX(n) - adjust for only the x axis
+7)ScaleY(n)-adjust for only y axis
+8)SkewX(angle)-slanting the elements- horizontally
+9)SkewY(angle) - skew it vertically
+10)Skew(x,y) - both the direction(horizontal+vertical)
+
+%%%%%%%%%%%% 3D %%%%%%%%%%%%%%
+helps the developers to make some real world applications
+
+3D tranformation properties:
+1) Transform origin: where I have to begin the transforamtion(left,right,top, etc)
+2)Transform style(nest the object circle with the sqaure) - 
+eg: outer 3D image 
+	Flate and preserve:  merged object 
+3)Perspective- Views (front view, side view)
+4)Perspective Origin- where to start 
+
+--webkit--4.3.0
+code will run on google chrome web browser
+
+%%%%%%%%%%% Transition %%%%%%%%%%%%%%%
+Used to change the values over a specified duration and animation
+1)Transition delay
+2)Transition duration
+3)Transition timing function
+	Ease: slow at beginning --> fast----->slow at the end
+	Linear: reamians in sam espeed through out
+
+%%%%%%%%%% Animation %%%%%%%%%%%%
+css3 animation are useful to make the changes in style gradually
+To perform this animation @Keyframes keyword-implement the animation
+@keyframes->used to specify what would happen at specific moments durng the animation
+-animation_name - used to specify the name of the animation.
+-keyframe_sector- from (0%){css style-optional}{100%}
+
+Properties of animation!
+1) animation_name: same as above
+2) animation_duration: specify the duration of the animation to complete
+3)animation_delay: used to specify the delay of the animation before starting
+4) animation_direction: used to specify the direction(L-R) or (R-L)/reverse
+Reverse- to make the animation play in the reeverse direction.
+	Animation_play_state- play mode/pause mode(running/paused)
+	Animation_iteration_count- used to specify the count of the animation i.e to be played. 
+		To specify the number of times an animation has to be played! 
+		If not speciffied so infinite
+
+
+
+
+
+
+

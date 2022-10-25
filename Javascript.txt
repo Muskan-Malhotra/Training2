@@ -1,0 +1,122 @@
+Write lots of code for creating page
+single web page
+security feature limited
+some complexity
+static and plain pages can create
+editing the modules the seperately.
+not centeralised--> in case of JS it is centralized
+
+%%%%%%%%%% Javascript %%%%%%%%%%%%%%%%%%%
+to program the behaviour of the page
+Interactive
+Interpreted Language(Compiler)
+Runs on the client side- browser
+Object based(Everything is documented as object)
+Javascript is not Java
+It is light weight 
+It is known as scripting language
+function,loops,data types,conditions,events,objects
+We need the browser to run JS
+Text Editor
+Responsiveness(Adaptive in all devices)(Laptop,phones, tablets)
+validate forms
+can create animations, slideshows
+
+%%%%%%%%% DOM %%%%%%%%%%%%%%%%%%%
+Top down approach
+Dynamically access and Update
+Content, Structure and Style
+Document
+Object: Mobile
+Property: attribute of Object
+Function: It is the functions(For Mobile): Call(), SwitchOn(), SendMsg()
+Property: color:blue, price:5000
+Html->head(style)->body-> (div)->p,id
+ID="myid"
+
+
+getElementByID()
+getElementByTagName(p)
+
+Inner HTML Property: Content within the tag is inner html
+<p id=="data"> Muskan Malhotra</p>
+document.getElementById("data")
+
+Two control statement:
+1) condition statement: if, if-elese,switch
+Based on expression passed, makes a decision
+2) Iteration Statement: loops, while, do-while, for
+
+Until and Unless the expression or conditons given is satisfied, the statement repeats
+
+%%%%%%%% form validation %%%%%%%%%%%%
+Arrays: collection of similar data types.
+It has contiguous memory allocation
+Stores the similar data types
+Creating arrays in javascript: variable: stores the value
+var country=["india","USA","Britain"]
+::::::::::::::::::::::::::::::::::::::::Types of Array:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Array Literal::: var name=['q','e','p']
+var name = new array()
+:::::::::::::::::::::::::::::::::::::::::::::;Array Constructor::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;;
+var name = new Constructor()
+::::::::::::::::::::::::::::::::::::::::;Array Methods::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+1) Concat method---> Array.concat(val1,val2,....valn)
+2)Every()--> whether the goven eleemts are true or false(If it matches the correct sequence)
+Arra.every(callback,argument)
+3)fill()--> fills the specified static value
+Array.fill(value)
+
+:::::::::::::::::::::::::::::::: JS Event Handling :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;;
+Event: it gives trigger when user wants to make modification
+1)OnBlur()--> When the user leaves an empty inout field
+2)Onchange()--> when the user tries to change something|| when a user tries to open a form and enter the text into the form. slect the values from a dropdown list
+3)OnFocus(Important)--> It is the special event when the user wants to highlight something. || An event performed by the user to highlight the important text.
+4)OnSelect()--> where the user tries to put some text as an input and displays.
+5)OnSubmit(V.Imp) --> Moving to next page or next section
+6)OnReset--> Clear the form.
+7)OnKeyDown() --> User presses and hold down a key
+8)OnKeyUP() --> Opposite to the OnKeyDown, when user releases the key.
+9)OnClick()-->Action carried out when clicking something
+10)OnMouseOver--> Mouse hover
+
+%%%%%%%%%%%%%%%% BOOTSTRAP %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Was released by W3C Consortium
+
+What is bootstrap?
+The html css and javascript framework. 
+Worlds most popular frontend open source toolkit
+Imp: It has responsive grid system.
+Responsiveness: It is visible in all devices. It looks on mobile,web,laptop,pc,desktop.
+Bootstrap contains cross platfrom features.
+
+Why Bootstrap?
+It is an open source framework.
+It is easy to include in the website!
+There is a responsive feature
+Can be applied on various devices
+Boostrap mainly for mobile first approach.
+It is compatible for all modern browsers.
+It runs on all the modern browsers.
+
+History:
+Released by 2011 on github
+2014 was no 1 project on github.
+
+Bootstrap configuration!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

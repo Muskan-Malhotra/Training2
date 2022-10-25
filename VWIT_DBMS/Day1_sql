@@ -1,0 +1,19 @@
+/*select e_id,e_name,salary from EmployeeData where 
+salary>(select salary from EmployeeData 
+where E_City="Mumbai")*//*
+
+--select e_id,e_name from EmployeeData 
+--union
+--select a_id from attendance */ 
+--for this same number of columns should be here
+
+/*alter table EmployeeData drop column e_city*/
+
+/*select e_id,e_name from EmployeeData
+intersect
+select a_id,date from attendance*/
+
+--alter table EmployeeData add salary int
+--select count(e_id) as 'Count' from EmployeeData
+select Avg(e_id) as 'Average' from EmployeeData
+

@@ -1,0 +1,317 @@
+# Timestamp
+# Name of Participant
+# Email ID
+# Mobile Number
+# Company Name
+# Designation
+# Faculty Name
+# Site / Venue
+# Quality of Course material against expectations
+# Quality of course content against expectations
+# Pace of the course / module:
+# The course provides sufficient practical experience
+# Status of H/W & S/w in respect of adequacy * :
+# Status of Administrative Infrastructure
+# Faculty Punctuality
+# Faculty Communication skills
+# Faculty Interaction with students
+# Faculty Initiative
+# Faculty Depth of Knowledge
+# Objectives in joining the course
+# Achievement of objectives (if No / Partially ,please elaborate below )
+# Would you recommend SEED Infotech to others?
+# Comments/Suggestions:
+
+
+
+
+
+
+
+
+
+[16:59] Saurika  Tiwary(Vatika82-N) (Guest)
+    #import library modules
+import time
+import random
+
+#Define variables---------
+options="yes"
+Ticket=[] # list to store ticket numbers
+Ticket_Datetime=[] #list to store ticket purchase time date
+Category=[]#list includes ticket category
+unit_cost=[]#list includes cost per ticket
+total_qty=[]#list includes total quantity per category
+total_cost=[]#list includes total cost per category
+LogoDate=time.strftime("%d/%m/%Y", time.localtime(time.time()))
+present_month=time.strftime("%m", time.localtime(time.time()))
+present_year=time.strftime("%Y", time.localtime(time.time()))
+Logoclock=time.strftime("%r", time.localtime(time.time()))
+Datetime=time.strftime("%d/%m/%Y %H:%M:%S", time.localtime(time.time()))#used in ticket receipt
+
+
+[17:00] Saurika  Tiwary(Vatika82-N) (Guest)
+    #print welcome message
+print('*'*80)
+print(LogoDate+"\t\t"+"Welcome to Movie Ticket Booking App"+"\t"+' '+Logoclock)
+print('*'*80)
+print("\t\t\t\t\t\t\t"+'Developed by Mr. John')
+print(' ')
+
+#price details against ticket category
+def price_detail():
+print('')
+print("Price Details:")
+print(' ')
+print('Ticket CategoryCost')
+print('-'*30)
+print('Adult100$')
+print('Child20$')
+print('Senior50$')
+print('Concession70$')
+print(' ')
+
+[17:00] Saurika  Tiwary(Vatika82-N) (Guest)
+    #price calculation against category selection
+def calculation():
+ticket_type=int(input('How many categories ticket do you want to purchase?(1-4) '))
+if ticket_type > 4 or ticket_type == 0:
+print('Invalid type count.retry!!!')
+print(' ')
+ticket_type=int(input('How many categories of ticket do you want to purchase?(1-4) '))
+print(' ')
+for i in range (ticket_type):
+Choose_Category=input('Choose a category as A for Adult/C for Child/S for Senior/CO for Concession: ')
+
+#Adult selection
+if Choose_Category == 'A':
+Adult_qty=int(input("How many adult tickets do you want to purchase? "))
+print(' ')
+Total_adult_price=Adult_qty * 100
+CatType='Adult'
+Category.append(CatType)
+cost=100
+unit_cost.append(cost)
+total_qty.append(Adult_qty)
+total_cost.append(Total_adult_price)
+
+
+[17:01] Saurika  Tiwary(Vatika82-N) (Guest)
+    #child selection
+elif Choose_Category == 'C':
+Child_qty=int(input("How many child tickets do you want to purchase? "))
+print(' ')
+Total_child_price=Child_qty * 20
+CatType='Child'
+Category.append(CatType)
+cost=20
+unit_cost.append(cost)
+total_qty.append(Child_qty)
+total_cost.append(Total_child_price)
+
+#Senior selection
+elif Choose_Category == 'S':
+Senior_qty=int(input("How many senior tickets do you want to purchase? "))
+print(' ')
+Total_senior_price=Senior_qty * 50
+CatType='Senior'
+Category.append(CatType)
+cost=50
+unit_cost.append(cost)
+total_qty.append(Senior_qty)
+total_cost.append(Total_senior_price)
+
+
+[17:01] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+#Concession selection
+elif Choose_Category == 'CO':
+concession_qty=int(input("How many concession tickets do you want to purchase? "))
+print(' ')
+Total_concession_price=concession_qty * 70
+CatType='Concession'
+Category.append(CatType)
+cost=70
+unit_cost.append(cost)
+total_qty.append(concession_qty)
+total_cost.append(Total_concession_price)
+else:
+print(' ')
+print('Please choose a valid category.')
+print(' ')
+[17:01] Saurika  Tiwary(Vatika82-N) (Guest)
+    #cart detail before payment process
+def cart_detail():
+print(' ')
+print('Bill Details:')
+print(' ')
+print("Ticket Category",' \t',"Unit Cost",'\t\t',"Qty",'\t\t',"Total Cost")
+print('-'*80)
+
+#use to design template for bill detail
+subtotal=0
+for i in range(len(Category)):
+print(Category[i],' \t\t',unit_cost[i],'\t\t',total_qty[i],'\t\t',total_cost[i])
+subtotal=int(total_cost[i])+subtotal
+print('\t\t\t\t','-------------------------')
+print('\t\t\t\t','Subtotal: ',str(subtotal),'$')
+print(' ')
+Tax_price=subtotal*0.15 # 15% Tax
+print('\t\t\t\t','Tax Amount(15%): ',str(Tax_price),'$')
+print('\t\t\t\t','-------------------------')
+Total=Tax_price+subtotal
+print('\t\t\t\t','Total cost of all tickets with Tax: ',str(Total),'$')
+[17:02] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+#ticket receipt after payment process
+def ticket_receipt():
+Ticket_No=random.randint(0,200)#used in ticket receipt
+print(' ')
+print('***************************************************************************')
+print("Ticket No:",Ticket_No,"\t\t\t\t\t",'Date:',Datetime)
+print('***************************************************************************')
+print("Ticket Category",'\t',"Unit Cost",'\t',"Qty",'\t',"Total Cost")
+print(' ')
+
+#used to design template for ticket receipt
+subtotal=0
+for i in range(len(Category)):
+print(Category[i],' \t\t',unit_cost[i],'\t\t',total_qty[i],'\t\t',total_cost[i])
+subtotal=int(total_cost[i])+subtotal
+print('\t\t\t\t','-------------------------')
+print('\t\t\t\t','Subtotal: ',str(subtotal),'$')
+Tax_price=subtotal*0.15
+print('\t\t\t\t','Tax Amount(15%): ',str(Tax_price),'$')
+[17:02] Saurika  Tiwary(Vatika82-N) (Guest)
+    print('\t\t\t\t','-------------------------')
+Total=Tax_price+subtotal
+print('\t\t\t\t','Total cost of all tickets with Tax: ',str(Total),'$')
+Ticket.append(Ticket_No)
+Ticket_Datetime.append(Datetime)
+[17:02] Saurika  Tiwary(Vatika82-N) (Guest)
+    #function used to write purchase data in to file
+def data_write_file(Category,total_qty,unit_cost,total_cost,Ticket,Ticket_Datetime):
+with open('transaction.txt','a') as f:
+#design data representation template
+f.write('******************************\n')
+for i in range(len(Ticket)):
+f.write("Ticket No: %d\n"%Ticket[i])
+f.write(Ticket_Datetime[i])
+f.write('\n')
+f.write('******************************\n')
+f.write('\n')
+for i in range(len(Category)):
+f.write('Category: ')
+f.write('%s\n'%Category[i])
+f.write('Qty: ')
+f.write('%d\n'%total_qty[i])
+f.write('Unit cost: ')
+f.write('%d\n'%unit_cost[i])
+f.write('Total cost: ')
+f.write('%d\n'%total_cost[i])
+f.write('\n')
+[17:03] Saurika  Tiwary(Vatika82-N) (Guest)
+    f.write('----------------------------\n')
+subtotal=0
+for i in range(len(total_cost)):
+subtotal=total_cost[i]+subtotal
+f.write("TotalCost(in $) %.f\n"%subtotal)
+Tax_price= subtotal*0.15
+Total=Tax_price+subtotal
+f.write("TotalCost with Tax(in $) %.f\n"%Total)
+f.write('----------------------------\n')
+Ticket.clear()
+Category.clear()
+unit_cost.clear()
+total_qty.clear()
+total_cost.clear()
+[17:03] Saurika  Tiwary(Vatika82-N) (Guest)
+    #Ticket purchasing process
+def purchase_ticket():
+print('The ticket categories are Adult,Child,Senior and Concession.')
+print(' ')
+show_price=input('Do you want to know the price against categories? Y/N or y/n ')
+print(' ')
+while True:
+if show_price in 'Y' or show_price in 'y':
+price_detail()
+break
+elif show_price in'N' or show_price in'n':
+print("Let's purchase tickets")
+print(' ')
+break
+else:
+print("Sorry your answer is not valid.")
+show_price=input('Do you want to know the price against categories? Y/N or y/n ')
+print(' ')
+
+calculation()
+print(' ')
+cart_detail()
+print(' ')
+print("Please enter your credit card details to proceed payment")
+print(' ')
+print('Credit card details: ')
+print('-'*20)
+[17:04] Saurika  Tiwary(Vatika82-N) (Guest)
+    Card_number=input('Enter your credit card number (min 14 digit long): ')
+while len(Card_number)<14 or len(Card_number)>14:
+print(' ')
+print('Invalid credit card number.retry!!')
+Card_number=input('Enter your credit card number (min 14 digit long): ')
+print(' ')
+Exipary_year=input('Enter valid expiry year of card (year like 2020): ')
+while int(Exipary_year) < int(present_year) :
+print('Invalid expiry year.retry!!')
+print(' ')
+Exipary_year=input('Enter valid expiry year of card(year like 2020): ')
+print(' ')
+
+Exipary_month=input('Enter valid expiry month of card (month like 12): ')
+while int(Exipary_month) <= int(present_month) or int(Exipary_month) > 12 or int(Exipary_month) < 0:
+print('Invalid expiry month.retry!!')
+print(' ')
+Exipary_month=input('Enter valid expiry month of card(month like 12): ')
+print(' ')
+print('Thank you for information. we are processing your payment.......')
+print(' ')
+print('You have successfully purchased the tickets.')
+print(' ')
+ticket_receipt()
+print(' ')
+print('Thank you for purchasing!!!! Choose option to close the application or continue.')
+data_write_file(Category,total_qty,unit_cost,total_cost,Ticket,Ticket_Datetime)
+#Main menu options:            
+while options in ("yes","y" ,"Y","Yes"):
+    print("Selection options:")
+    print("1.Show Price Details")
+    print("2.Purchase Tickets")
+    print("3.Exit")
+    print('\n')
+    choice=input("Choose a valid option as 1 or 2 or 3: ")
+    print(' ')
+    if choice == '1':
+        price_detail()
+        Buy_ticket= input("Do you want to purchase tickets? Y/N or y/n ")
+        print(' ')
+        if Buy_ticket in ("y", "Y"):
+            purchase_ticket()
+
+        elif Buy_ticket in ("n", "N"):
+            print("Choose option again.")
+            print(" ")
+            
+        else:
+            print("Invalid answer.Choose option again.")
+            print(" ")
+            [17:05] Saurika  Tiwary(Vatika82-N) (Guest)
+    
+        elif choice == '2':
+        purchase_ticket()
+
+        elif choice == '3':
+        print("Thank you for visiting us!!!!")
+        break
+        else:
+        print("Choose a valid option.")
+        options='yes'

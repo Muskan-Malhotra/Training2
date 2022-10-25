@@ -1,0 +1,87 @@
+[2:36 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    sql1= 'INSERT INTO Teacher_Detail(ID,FIRST_NAME,LAST_NAME, SEX,SUBJECT, INCOME)VALUES(103,"John", "Thomas", "M","Math", 20000)'
+sql2= 'INSERT INTO Teacher_Detail(ID,FIRST_NAME,LAST_NAME, SEX,SUBJECT, INCOME)VALUES(104,"Sam", "Johnson", "M","Science", 40000)'
+sql3= 'INSERT INTO Teacher_Detail(ID,FIRST_NAME,LAST_NAME, SEX,SUBJECT, INCOME)VALUES(1011,"Martina", "Lee", "F","English", 45000)'
+try:
+   cursor.execute(sql1)
+   cursor.execute(sql2)
+   cursor.execute(sql3)
+   print('Data successfully inserted')
+   conn.commit()
+except:
+   conn.rollback()
+   print('Data not inserted')
+​[2:45 PM] Dipak More (Guest)
+    
+
+
+mycsr=mydb.cursor()
+ 
+mycsr.execute("DROP TABLE IF EXISTs employeeinfo")
+ 
+sql= """CREATE TABLE employeeInfo(
+e_id INT PRIMARY KEY AUTO_INCREMENT,
+e_name VARCHAR(200) NOT NULL,
+e_address VARCHAR(200) NOT NULL,
+e_phone BIGINT UNIQUE NOT NULL,
+salary DOUBLE 
+)
+ 
+mycsr.execute(sql)
+ 
+
+[3:22 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+       results = cursor.fetchall()
+
+
+[2:57 PM] Dipak More (Guest)
+    
+
+"""INSERT INTO companyinfo.employeeinfo(e_id, e_name, e_address, e_phone, salary) VALUES (%s, %s, %s, %s, %s)""" %(id,name,add,ph,sal)
+
+[3:34 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    sql = "SELECT * FROM Teacher_detail \
+       WHERE INCOME > 20000”
+try:
+   cursor.execute(sql)
+   results = cursor.fetchall()
+   print ("Teacher data: ", results)
+   print("Data successfully fetched")
+except:
+   print ("Error: unable to fecth data")
+
+
+[3:34 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    sql = "UPDATE Teacher_detail SET INCOME = INCOME + 5000 WHERE SEX = '%c'" % ('M')
+try:
+   cursor.execute(sql)
+   print('Data is successfully updated')
+   conn.commit()
+except:
+   conn.rollback()
+   print('Error: Data is not updated')
+
+
+[3:35 PM] Saurika  Tiwary(Vatika82-N) (Guest)
+    sql = "DELETE FROM Teacher_detail WHERE INCOME = '%d'" % (25000)
+try:
+   cursor.execute(sql)
+   print('Data is successfully deleted')
+   conn.commit()
+except:
+   conn.rollback()
+   print('Error: Data is not deleted')
+
+Steps:
+mysql installer
+deleted workbecnhc
+installed python installer, server and workbech
+next..next..next
+then applied password
+then moved to mysql workbect clicked on edit connection(renamed it) .. test connection
+then in sys folder mein jaake right click and click on create schema!
+name schema and then run python codes
+
+
+
+

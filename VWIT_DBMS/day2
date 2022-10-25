@@ -1,0 +1,75 @@
+/*select e_id,e_name,salary from EmployeeData where 
+salary>(select salary from EmployeeData 
+where E_City="Mumbai")*//*
+
+--select e_id,e_name from EmployeeData 
+--union
+--select a_id from attendance */ 
+--for this same number of columns should be here
+
+/*alter table EmployeeData drop column e_city*/
+
+/*select e_id,e_name from EmployeeData
+intersect
+select a_id,date from attendance*/
+
+--alter table EmployeeData add salary int
+--select count(e_id) as 'Count' from EmployeeData
+--select Avg(e_id) as 'Average' from EmployeeData
+
+--/// Day 3 ///
+--create table product(
+--p_id integer primary key not null,
+--p_code varchar,
+--p_name varchar,
+--p_loc varchar
+--
+--);
+
+/*drop table product*/
+
+--insert into product(p_id,p_code,p_name,p_loc) values(101,"A123","Apple","Delhi")
+/*insert into product(p_id,p_code,p_name,p_loc) values(102,"B223","Cherry","Shimla")*/
+/*insert into product(p_id,p_code,p_name,p_loc) values(103,"C323","Kiwi","Mumbai")*/
+/*insert into product(p_id,p_code,p_name,p_loc) values(104,"D423","Grapes","Shimla")*/
+--insert into product(p_id,p_code,p_name,p_loc) values(104,"E523","Pine-Apple","Delhi")
+
+-- select top 2(p_id,p_name) from product  --> not working in sqllite
+/*select * from product where p_name in ('Apple','Kiwi')*/
+/*select attendance.id,attendance.data.employeesData.name,employeesData.phn
+from attendance
+inner join employeesData on employeesData.id == attendance.id*/
+
+/*select attendance.a_id,attendance.a_type,EmployeeData.e_name
+from attendance
+inner join EmployeeData on EmployeeData.e_id==attendance.a_id*/
+/*select employees.name,employees.designation,projectDetail.P_Name,attendance.date,
+attendance.in_time,attendance.out_time
+from attendance
+Inner join employees on employees.id==attendance.id
+Inner join Assign_PRJ on employees.id==Assign_PRJ.id
+Inner join projectDetail on projectDetail.P_ID==Assign_PRJ.P_ID
+where attendance.date=='22-9-2022'
+order by attendance.date*/
+
+
+    
+/*select E.name,E.designation,PD.P_Name,A.date,A.in_time,A.out_time
+from attendance as A
+Inner join employees as E on E.id==A.id
+Inner join Assign_PRJ as AP on E.id==AP.id
+Inner join projectDetailas PD on PD.P_ID==AP.P_ID
+where A.date=='22-9-2022'
+order by A.date*/
+
+    
+select E.name,E.designation,PD.P_Name,A.date,A.in_time,A.out_time
+from attendance as A
+Inner join employees as E on E.id==A.id
+Inner join Assign_PRJ as AP on E.id==AP.id
+Inner join projectDetailas PD on PD.P_ID==AP.P_ID
+where A.date=='22-9-2022'
+order by A.date
+
+
+
